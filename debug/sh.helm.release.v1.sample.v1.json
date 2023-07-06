@@ -1,0 +1,62 @@
+{
+  "name": "sample",
+  "info": {
+    "first_deployed": "2023-07-07T17:11:42.557775142Z",
+    "last_deployed": "2023-07-07T17:11:42.557775142Z",
+    "deleted": "",
+    "description": "Install complete",
+    "status": "deployed",
+    "notes": "Sample app to demo operator bug"
+  },
+  "chart": {
+    "metadata": {
+      "name": "sample",
+      "version": "1.0.0",
+      "description": "A Helm chart for Kubernetes",
+      "apiVersion": "v2",
+      "appVersion": "1.0.0",
+      "type": "application"
+    },
+    "lock": null,
+    "templates": [
+      {
+        "name": "templates/NOTES.txt",
+        "data": "U2FtcGxlIGFwcCB0byBkZW1vIG9wZXJhdG9yIGJ1Zw=="
+      },
+      {
+        "name": "templates/deployments.yaml",
+        "data": "YXBpVmVyc2lvbjogYXBwcy92MQpraW5kOiBEZXBsb3ltZW50Cm1ldGFkYXRhOgogIG5hbWU6IHt7IC5SZWxlYXNlLk5hbWUgfX0tZGVwbG95bWVudAogIG5hbWVzcGFjZToge3sgLlJlbGVhc2UuTmFtZXNwYWNlIH19CiAgbGFiZWxzOgogICAgYXBwOiB7eyAuUmVsZWFzZS5OYW1lIH19CnNwZWM6CiAgcmVwbGljYXM6IDEKICBzZWxlY3RvcjoKICAgIG1hdGNoTGFiZWxzOgogICAgICBhcHA6IHt7IC5SZWxlYXNlLk5hbWUgfX0KICB0ZW1wbGF0ZToKICAgIG1ldGFkYXRhOgogICAgICBuYW1lc3BhY2U6IHt7IC5SZWxlYXNlLk5hbWVzcGFjZSB9fQogICAgICBsYWJlbHM6CiAgICAgICAgYXBwOiB7eyAuUmVsZWFzZS5OYW1lIH19CiAgICBzcGVjOgogICAgICBzZXJ2aWNlQWNjb3VudE5hbWU6IHt7IC5SZWxlYXNlLk5hbWUgfX0tc2EKICAgICAgdm9sdW1lczoKICAgICAgICAtIG5hbWU6IHt7IC5SZWxlYXNlLk5hbWUgfX0tdm9sdW1lCiAgICAgICAgICBwZXJzaXN0ZW50Vm9sdW1lQ2xhaW06CiAgICAgICAgICAgIGNsYWltTmFtZToge3sgLlJlbGVhc2UuTmFtZSB9fS1wdmMKICAgICAgY29udGFpbmVyczoKICAgICAgICAtIG5hbWU6IHt7IC5SZWxlYXNlLk5hbWUgfX0KICAgICAgICAgIGltYWdlOiB7eyAuVmFsdWVzLmltYWdlIH19CiAgICAgICAgICBwb3J0czoKICAgICAgICAgICAgLSBjb250YWluZXJQb3J0OiA4MAogICAgICAgICAgdm9sdW1lTW91bnRzOgogICAgICAgICAgICAtIG1vdW50UGF0aDogIi91c3Ivc2hhcmUvbmdpbngvaHRtbCIKICAgICAgICAgICAgICBuYW1lOiB7eyAuUmVsZWFzZS5OYW1lIH19LXZvbHVtZQogICAgICAgICAgc2VjdXJpdHlDb250ZXh0OgogICAgICAgICAgICBhbGxvd1ByaXZpbGVnZUVzY2FsYXRpb246IGZhbHNlCiAgICAgICAgICAgIHJ1bkFzTm9uUm9vdDogdHJ1ZQogICAgICAgICAgICBjYXBhYmlsaXRpZXM6CiAgICAgICAgICAgICAgZHJvcDogWyAiQUxMIiBdCiAgICAgICAgICAgIHNlY2NvbXBQcm9maWxlOgogICAgICAgICAgICAgIHR5cGU6IFJ1bnRpbWVEZWZhdWx0Cg=="
+      },
+      {
+        "name": "templates/persistentvolumeclaims.yaml",
+        "data": "YXBpVmVyc2lvbjogdjEKa2luZDogUGVyc2lzdGVudFZvbHVtZUNsYWltCm1ldGFkYXRhOgogIG5hbWU6IHt7IC5SZWxlYXNlLk5hbWUgfX0tcHZjCiAgbmFtZXNwYWNlOiB7eyAuUmVsZWFzZS5OYW1lc3BhY2UgfX0Kc3BlYzoKICBhY2Nlc3NNb2RlczoKICAgIC0gUmVhZFdyaXRlT25jZQogIHJlc291cmNlczoKICAgIHJlcXVlc3RzOgogICAgICBzdG9yYWdlOiB7eyAuVmFsdWVzLnB2Yy5zaXplIH19Cg=="
+      },
+      {
+        "name": "templates/serviceaccounts.yaml",
+        "data": "a2luZDogU2VydmljZUFjY291bnQKYXBpVmVyc2lvbjogdjEKbWV0YWRhdGE6CiAgbmFtZToge3sgLlJlbGVhc2UuTmFtZSB9fS1zYQogIG5hbWVzcGFjZToge3sgLlJlbGVhc2UuTmFtZXNwYWNlIH19Cg=="
+      }
+    ],
+    "values": {
+      "image": "nginxinc/nginx-unprivileged",
+      "pvc": {
+        "size": "2Gi"
+      }
+    },
+    "schema": null,
+    "files": [
+      {
+        "name": ".helmignore",
+        "data": "IyBQYXR0ZXJucyB0byBpZ25vcmUgd2hlbiBidWlsZGluZyBwYWNrYWdlcy4KIyBUaGlzIHN1cHBvcnRzIHNoZWxsIGdsb2IgbWF0Y2hpbmcsIHJlbGF0aXZlIHBhdGggbWF0Y2hpbmcsIGFuZAojIG5lZ2F0aW9uIChwcmVmaXhlZCB3aXRoICEpLiBPbmx5IG9uZSBwYXR0ZXJuIHBlciBsaW5lLgouRFNfU3RvcmUKIyBDb21tb24gVkNTIGRpcnMKLmdpdC8KLmdpdGlnbm9yZQouYnpyLwouYnpyaWdub3JlCi5oZy8KLmhnaWdub3JlCi5zdm4vCiMgQ29tbW9uIGJhY2t1cCBmaWxlcwoqLnN3cAoqLmJhawoqLnRtcAoqLm9yaWcKKn4KIyBWYXJpb3VzIElERXMKLnByb2plY3QKLmlkZWEvCioudG1wcm9qCi52c2NvZGUvCg=="
+      }
+    ]
+  },
+  "config": {
+    "image": "nginxinc/nginx-unprivileged",
+    "pvc": {
+      "size": "2Gi"
+    }
+  },
+  "manifest": "---\n# Source: sample/templates/serviceaccounts.yaml\nkind: ServiceAccount\napiVersion: v1\nmetadata:\n  name: sample-sa\n  namespace: sample\n---\n# Source: sample/templates/persistentvolumeclaims.yaml\napiVersion: v1\nkind: PersistentVolumeClaim\nmetadata:\n  name: sample-pvc\n  namespace: sample\nspec:\n  accessModes:\n    - ReadWriteOnce\n  resources:\n    requests:\n      storage: 2Gi\n---\n# Source: sample/templates/deployments.yaml\napiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: sample-deployment\n  namespace: sample\n  labels:\n    app: sample\nspec:\n  replicas: 1\n  selector:\n    matchLabels:\n      app: sample\n  template:\n    metadata:\n      namespace: sample\n      labels:\n        app: sample\n    spec:\n      serviceAccountName: sample-sa\n      volumes:\n        - name: sample-volume\n          persistentVolumeClaim:\n            claimName: sample-pvc\n      containers:\n        - name: sample\n          image: nginxinc/nginx-unprivileged\n          ports:\n            - containerPort: 80\n          volumeMounts:\n            - mountPath: \"/usr/share/nginx/html\"\n              name: sample-volume\n          securityContext:\n            allowPrivilegeEscalation: false\n            runAsNonRoot: true\n            capabilities:\n              drop: [ \"ALL\" ]\n            seccompProfile:\n              type: RuntimeDefault\n",
+  "version": 1,
+  "namespace": "sample"
+}

@@ -1,0 +1,104 @@
+# kubectl get pvc sample-pvc -n sample --watch --show-managed-fields -o yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  annotations:
+    meta.helm.sh/release-name: sample
+    meta.helm.sh/release-namespace: sample
+    pv.kubernetes.io/bind-completed: "yes"
+    pv.kubernetes.io/bound-by-controller: "yes"
+    volume.beta.kubernetes.io/storage-provisioner: ebs.csi.aws.com
+    volume.kubernetes.io/selected-node: ip-10-0-217-136.us-west-2.compute.internal
+    volume.kubernetes.io/storage-provisioner: ebs.csi.aws.com
+  creationTimestamp: "2023-07-07T18:03:37Z"
+  finalizers:
+    - kubernetes.io/pvc-protection
+  labels:
+    app.kubernetes.io/managed-by: Helm
+  managedFields:
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:meta.helm.sh/release-name: {}
+            f:meta.helm.sh/release-namespace: {}
+          f:labels:
+            .: {}
+            f:app.kubernetes.io/managed-by: {}
+          f:ownerReferences:
+            .: {}
+            k:{"uid":"5244743f-b09b-4d55-97fe-e2a16221e24f"}: {}
+        f:spec:
+          f:accessModes: {}
+          f:resources:
+            f:requests:
+              .: {}
+              f:storage: {}
+          f:volumeMode: {}
+      manager: helm-operator
+      operation: Update
+      time: "2023-07-07T18:03:37Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:volume.kubernetes.io/selected-node: {}
+      manager: kube-scheduler
+      operation: Update
+      time: "2023-07-07T18:03:37Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:pv.kubernetes.io/bind-completed: {}
+            f:pv.kubernetes.io/bound-by-controller: {}
+            f:volume.beta.kubernetes.io/storage-provisioner: {}
+            f:volume.kubernetes.io/storage-provisioner: {}
+        f:spec:
+          f:volumeName: {}
+      manager: kube-controller-manager
+      operation: Update
+      time: "2023-07-07T18:03:41Z"
+    - apiVersion: v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:status:
+          f:accessModes: {}
+          f:capacity:
+            .: {}
+            f:storage: {}
+          f:phase: {}
+      manager: kube-controller-manager
+      operation: Update
+      subresource: status
+      time: "2023-07-07T18:03:41Z"
+  name: sample-pvc
+  namespace: sample
+  ownerReferences:
+    - apiVersion: debug.ssuresh.io/v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Sample
+      name: sample
+      uid: 5244743f-b09b-4d55-97fe-e2a16221e24f
+  resourceVersion: "689506"
+  uid: 2e3b0d4f-8c73-4229-90c2-ade68999f912
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+  storageClassName: gp3-csi
+  volumeMode: Filesystem
+  volumeName: pvc-2e3b0d4f-8c73-4229-90c2-ade68999f912
+status:
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 2Gi
+  phase: Bound

@@ -1,0 +1,27 @@
+# permissions for end users to view samples.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: sample-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: sample-operator
+    app.kubernetes.io/part-of: sample-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: sample-viewer-role
+rules:
+- apiGroups:
+  - debug.ssuresh.io
+  resources:
+  - samples
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - debug.ssuresh.io
+  resources:
+  - samples/status
+  verbs:
+  - get

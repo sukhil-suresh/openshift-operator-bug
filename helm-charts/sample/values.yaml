@@ -1,0 +1,3 @@
+image: nginxinc/nginx-unprivileged
+pvc:
+ size: 2Gi

@@ -1,0 +1,6 @@
+# Use the 'create api' subcommand to add watches to this file.
+- group: debug.ssuresh.io
+  version: v1
+  kind: Sample
+  chart: helm-charts/sample
+#+kubebuilder:scaffold:watch
