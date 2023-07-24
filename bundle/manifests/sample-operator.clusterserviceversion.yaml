@@ -23,7 +23,7 @@ metadata:
     operators.operatorframework.io/builder: operator-sdk-v1.28.0-ocp
     operators.operatorframework.io/project_layout: helm.sdk.operatorframework.io/v1
     operatorframework.io/suggested-namespace: sample
-  name: sample-operator.v1.0.0
+  name: sample-operator.v2.0.0
   namespace: placeholder
 spec:
   apiservicedefinitions: {}
@@ -167,7 +167,7 @@ spec:
                 - --metrics-bind-address=127.0.0.1:8080
                 - --leader-elect
                 - --leader-election-id=sample-operator
-                image: sukhilsuresh/sample-operator:1.0.0
+                image: sukhilsuresh/sample-operator:2.0.0
                 imagePullPolicy: Always
                 livenessProbe:
                   httpGet:
@@ -253,4 +253,4 @@ spec:
   provider:
     name: sukhil-suresh
     url: https://github.com/sukhil-suresh
-  version: 1.0.0
+  version: 2.0.0
