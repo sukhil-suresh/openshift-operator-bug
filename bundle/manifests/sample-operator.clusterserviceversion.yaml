@@ -23,6 +23,7 @@ metadata:
     operators.operatorframework.io/builder: operator-sdk-v1.28.0-ocp
     operators.operatorframework.io/project_layout: helm.sdk.operatorframework.io/v1
     operatorframework.io/suggested-namespace: sample
+    helm.sdk.operatorframework.io/rollback-force: "false"
   name: sample-operator.v1.0.0
   namespace: placeholder
 spec:
