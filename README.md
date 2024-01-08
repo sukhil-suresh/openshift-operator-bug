@@ -34,6 +34,14 @@ to ensure that a helm upgrade failure is retried. This results in an upgrade and
 attempt until the upgrade succeeds (when the user corrects the Operand yaml). And each upgrade/rollback attempt results
 in a fresh pair of`token` and `dockercfg` secrets being created for every service account.
 
+## Building images
+```shell 
+$ docker build -f Dockerfile -t sukhilsuresh/sample-operator:1.0.0 --push . && \
+  docker build -f bundle.Dockerfile -t sukhilsuresh/sample-operator-bundle:1.0.0 --push . && \
+  opm index add --bundles sukhilsuresh/sample-operator-bundle:1.0.0 --tag sukhilsuresh/sample-operator-bundle-index:1.0.0 --container-tool docker && \
+  docker push sukhilsuresh/sample-operator-bundle-index:1.0.0
+```
+
 ## Steps to reproduce
 
 Prerequisite: Access to an OpenShift cluster.
